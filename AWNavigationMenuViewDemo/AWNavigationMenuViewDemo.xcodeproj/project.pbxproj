@@ -49,6 +49,9 @@
 		E97789131965367300F528CA /* top_toolbar_hot_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E97788F71965367300F528CA /* top_toolbar_hot_normal@2x.png */; };
 		E97789141965367300F528CA /* top_toolbar_hot_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E97788F81965367300F528CA /* top_toolbar_hot_selected.png */; };
 		E97789151965367300F528CA /* top_toolbar_hot_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E97788F91965367300F528CA /* top_toolbar_hot_selected@2x.png */; };
+		E977891819653AA100F528CA /* AWNavigationMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E977891719653AA100F528CA /* AWNavigationMenuView.m */; };
+		E977891B19653CD500F528CA /* AWTopActionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E977891A19653CD500F528CA /* AWTopActionToolbar.m */; };
+		E977891D196541D700F528CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E977891C196541D700F528CA /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +113,11 @@
 		E97788F71965367300F528CA /* top_toolbar_hot_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_toolbar_hot_normal@2x.png"; sourceTree = "<group>"; };
 		E97788F81965367300F528CA /* top_toolbar_hot_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_toolbar_hot_selected.png; sourceTree = "<group>"; };
 		E97788F91965367300F528CA /* top_toolbar_hot_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_toolbar_hot_selected@2x.png"; sourceTree = "<group>"; };
+		E977891619653AA100F528CA /* AWNavigationMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWNavigationMenuView.h; sourceTree = "<group>"; };
+		E977891719653AA100F528CA /* AWNavigationMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWNavigationMenuView.m; sourceTree = "<group>"; };
+		E977891919653CD500F528CA /* AWTopActionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWTopActionToolbar.h; sourceTree = "<group>"; };
+		E977891A19653CD500F528CA /* AWTopActionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWTopActionToolbar.m; sourceTree = "<group>"; };
+		E977891C196541D700F528CA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E977891D196541D700F528CA /* QuartzCore.framework in Frameworks */,
 				D1B97AB8195FBD180076577D /* CoreGraphics.framework in Frameworks */,
 				D1B97ABA195FBD180076577D /* UIKit.framework in Frameworks */,
 				D1B97AB6195FBD180076577D /* Foundation.framework in Frameworks */,
@@ -158,6 +167,7 @@
 		D1B97AB4195FBD180076577D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E977891C196541D700F528CA /* QuartzCore.framework */,
 				D1B97AB5195FBD180076577D /* Foundation.framework */,
 				D1B97AB7195FBD180076577D /* CoreGraphics.framework */,
 				D1B97AB9195FBD180076577D /* UIKit.framework */,
@@ -215,6 +225,10 @@
 				E977889819652E5100F528CA /* AWNavigationMenuButton.m */,
 				E97788D91965362500F528CA /* AWNavigationMenuItem.h */,
 				E97788DA1965362500F528CA /* AWNavigationMenuItem.m */,
+				E977891619653AA100F528CA /* AWNavigationMenuView.h */,
+				E977891719653AA100F528CA /* AWNavigationMenuView.m */,
+				E977891919653CD500F528CA /* AWTopActionToolbar.h */,
+				E977891A19653CD500F528CA /* AWTopActionToolbar.m */,
 			);
 			path = AWNavigationMenu;
 			sourceTree = "<group>";
@@ -386,8 +400,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E977891819653AA100F528CA /* AWNavigationMenuView.m in Sources */,
 				E977889919652E5100F528CA /* AWNavigationMenuButton.m in Sources */,
 				E97788DB1965362500F528CA /* AWNavigationMenuItem.m in Sources */,
+				E977891B19653CD500F528CA /* AWTopActionToolbar.m in Sources */,
 				D1B97AC6195FBD180076577D /* AWAppDelegate.m in Sources */,
 				D1B97AC2195FBD180076577D /* main.m in Sources */,
 			);

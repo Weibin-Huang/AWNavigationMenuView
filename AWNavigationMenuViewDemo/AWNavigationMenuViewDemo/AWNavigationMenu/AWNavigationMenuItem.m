@@ -13,7 +13,7 @@
 @synthesize selectedImageName = selectedImageName_;
 @synthesize title = title_;
 @synthesize iconImageName = iconImageName_;
-+(KDNavigationMenuItem *)menuItemWithImageName:(NSString *)imageName
++(AWNavigationMenuItem *)menuItemWithImageName:(NSString *)imageName
                              selectedImageName:(NSString *)selectedImageName
                                          title:(NSString *)title
                                  iconImageName:(NSString *)iconImageName
