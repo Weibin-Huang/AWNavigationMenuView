@@ -9,5 +9,20 @@
 #import "AWNavigationMenuItem.h"
 
 @implementation AWNavigationMenuItem
-
+@synthesize imageName = imageName_;
+@synthesize selectedImageName = selectedImageName_;
+@synthesize title = title_;
+@synthesize iconImageName = iconImageName_;
++(KDNavigationMenuItem *)menuItemWithImageName:(NSString *)imageName
+                             selectedImageName:(NSString *)selectedImageName
+                                         title:(NSString *)title
+                                 iconImageName:(NSString *)iconImageName
+{
+    AWNavigationMenuItem *item = [[AWNavigationMenuItem alloc] init];
+    item.imageName = imageName;
+    item.selectedImageName = selectedImageName;
+    item.title = title;
+    item.iconImageName = iconImageName;
+    return item;
+}
 @end

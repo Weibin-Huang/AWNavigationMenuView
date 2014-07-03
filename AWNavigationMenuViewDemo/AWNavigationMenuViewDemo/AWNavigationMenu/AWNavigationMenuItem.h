@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface AWNavigationMenuItem : NSObject
+@property(nonatomic,copy)NSString *imageName;
+@property(nonatomic,copy)NSString *selectedImageName;
+@property(nonatomic,copy)NSString *title;
+@property(nonatomic,copy)NSString *iconImageName;
++ (AWNavigationMenuItem *)menuItemWithImageName:(NSString *)imageName
+                              selectedImageName:(NSString *)selectedImageName
+                                          title:(NSString *)title
+                                  iconImageName:(NSString *)iconImageName;
 
 @end
