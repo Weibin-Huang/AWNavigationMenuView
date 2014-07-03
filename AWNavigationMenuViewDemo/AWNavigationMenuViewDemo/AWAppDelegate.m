@@ -7,14 +7,16 @@
 //
 
 #import "AWAppDelegate.h"
-
+#import "AWMainViewController.h"
 @implementation AWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+
+    AWMainViewController * mainViewController = [[AWMainViewController alloc]init];
+    UINavigationController * navigationController = [[UINavigationController alloc]initWithRootViewController:mainViewController];
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

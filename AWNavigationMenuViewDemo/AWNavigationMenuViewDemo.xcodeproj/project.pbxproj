@@ -52,6 +52,7 @@
 		E977891819653AA100F528CA /* AWNavigationMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E977891719653AA100F528CA /* AWNavigationMenuView.m */; };
 		E977891B19653CD500F528CA /* AWTopActionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E977891A19653CD500F528CA /* AWTopActionToolbar.m */; };
 		E977891D196541D700F528CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E977891C196541D700F528CA /* QuartzCore.framework */; };
+		E977892019655D4F00F528CA /* AWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977891F19655D4F00F528CA /* AWMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,8 @@
 		E977891919653CD500F528CA /* AWTopActionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWTopActionToolbar.h; sourceTree = "<group>"; };
 		E977891A19653CD500F528CA /* AWTopActionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWTopActionToolbar.m; sourceTree = "<group>"; };
 		E977891C196541D700F528CA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E977891E19655D4F00F528CA /* AWMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWMainViewController.h; sourceTree = "<group>"; };
+		E977891F19655D4F00F528CA /* AWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 			children = (
 				D1B97AC4195FBD180076577D /* AWAppDelegate.h */,
 				D1B97AC5195FBD180076577D /* AWAppDelegate.m */,
+				E977891E19655D4F00F528CA /* AWMainViewController.h */,
+				E977891F19655D4F00F528CA /* AWMainViewController.m */,
 				D1B97AC7195FBD180076577D /* Images.xcassets */,
 				E977889619652E5100F528CA /* AWNavigationMenu */,
 				D1B97ABC195FBD180076577D /* Supporting Files */,
@@ -402,6 +407,7 @@
 			files = (
 				E977891819653AA100F528CA /* AWNavigationMenuView.m in Sources */,
 				E977889919652E5100F528CA /* AWNavigationMenuButton.m in Sources */,
+				E977892019655D4F00F528CA /* AWMainViewController.m in Sources */,
 				E97788DB1965362500F528CA /* AWNavigationMenuItem.m in Sources */,
 				E977891B19653CD500F528CA /* AWTopActionToolbar.m in Sources */,
 				D1B97AC6195FBD180076577D /* AWAppDelegate.m in Sources */,
