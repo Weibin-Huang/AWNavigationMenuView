@@ -9,7 +9,7 @@
 #import "AWMainViewController.h"
 #import "AWNavigationMenu/AWNavigationMenuView.h"
 #import "AWNavigationMenuItem.h"
-@interface AWMainViewController ()
+@interface AWMainViewController ()<AWNavigationMenuViewDelegate>
 
 @end
 
@@ -41,7 +41,8 @@
 
 -(void)setupMenuView{
     if(self.navigationItem) {
-        AWNavigationMenuView *menuView = [[AWNavigationMenuView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, self.navigationController.navigationBar.bounds.size.height) ];
+        CGRect rect = CGRectMake(0.0f, 0.0f, 200.0f, self.navigationController.navigationBar.bounds.size.height);
+        AWNavigationMenuView *menuView = [[AWNavigationMenuView alloc] initWithFrame: rect];
         
         //公司动态
         AWNavigationMenuItem *itemCompany = [AWNavigationMenuItem menuItemWithImageName:@"top_toolbar_company_normal" selectedImageName:@"top_toolbar_company_selected" title:@"动态" iconImageName:@"title_view_icon_company" ];
@@ -54,12 +55,17 @@
         
         AWNavigationMenuItem *itemBulletin = [AWNavigationMenuItem menuItemWithImageName:@"top_toolbar_bulletin_normal" selectedImageName:@"top_toolbar_bulletin_selected" title:@"关注"iconImageName:@"title_view_icon_bulletin" ];
         
-    //    menuView.delegate = self;
+        menuView.delegate = self;
         [menuView setItems:@[itemCompany,itemFollow,itemHot,itemBulletin] index:0];
         [menuView displayMenuInView:self.view];
         
         self.navigationItem.titleView = menuView;
     }
 
+}
+#pragma mark - 
+#pragma mark NavigationMenuView Delegate
+-(void)didSelectedItemAtIndex:(NSUInteger)index{
+    NSLog(@"MenuView did selected at %ld",index);
 }
 @end

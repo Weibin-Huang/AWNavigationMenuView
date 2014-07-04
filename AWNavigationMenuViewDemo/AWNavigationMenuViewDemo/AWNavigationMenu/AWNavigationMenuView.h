@@ -10,6 +10,7 @@
 
 @class AWNavigationMenuItem;
 @class AWNavigationMenuButton;
+
 enum AWMenuType{
     kMenuTypeDefault = 1,
     KMenuTypeCommunity

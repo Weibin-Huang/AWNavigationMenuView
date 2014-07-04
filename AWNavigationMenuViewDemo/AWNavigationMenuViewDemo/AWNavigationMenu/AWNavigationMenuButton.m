@@ -40,7 +40,8 @@
     [iconImageView_ sizeToFit];
     [buttonTitleLabel_ sizeToFit];
     CGPoint center = [[[UIApplication sharedApplication].delegate window] center];
-    center.y = CGRectGetHeight(self.bounds) * 5;
+    center = [self convertPoint:center fromView:[[UIApplication sharedApplication].delegate window]];
+    center.y = CGRectGetHeight(self.bounds) * 0.5;
     buttonTitleLabel_.center = center;
     arrowImageView_.center = CGPointMake(CGRectGetMaxX(buttonTitleLabel_.frame) + 10, self.frame.size.height / 2);
     iconImageView_.center = CGPointMake(CGRectGetMinX(buttonTitleLabel_.frame) - CGRectGetMidX(iconImageView_.bounds) - 5,

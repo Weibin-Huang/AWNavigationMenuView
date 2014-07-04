@@ -75,7 +75,7 @@ alpha:1.0]
     if ([titles count]>1)
         title = [titles objectAtIndex:0];
     
-    menuBtn_.titleLabel.text = title;
+    menuBtn_.buttonTitleLabel.text = title;
     
     UIImage *image = [UIImage imageNamed:item.iconImageName];
     menuBtn_.iconImageView.image = image;
@@ -163,6 +163,11 @@ alpha:1.0]
     }
     return maskView_;
 }
+- (void)hideNavigationToolBar {
+    if(self.menuBtn.isActive) {
+        [self menuBtnTapped:nil];
+    }
+}
 
 - (void)showMaskView {
     if (self.menuContainer) {
@@ -182,11 +187,6 @@ alpha:1.0]
     }
 }
 
-- (void)hideNavigationToolBar {
-    if(self.menuBtn.isActive) {
-        [self menuBtnTapped:nil];
-    }
-}
 - (void)hideMaskView {
     if ([self.maskView superview]) {
         [UIView animateWithDuration:0.5f animations:^(void) {
@@ -199,7 +199,13 @@ alpha:1.0]
     }
 }
 
+
+
+#pragma mark - 
+#pragma mark TopActionToolBar Delegate
+
 - (void)topActionToolBar:(AWTopActionToolbar *)toolbar didSelectedAtIndex:(NSInteger)index {
+    NSLog(@"tool bar did selected at %ld",index);
     [self menuBtnTapped:nil];
     self.currentIndex = index;
     if (delegate_ && [delegate_ respondsToSelector:@selector(didSelectedItemAtIndex:)]) {

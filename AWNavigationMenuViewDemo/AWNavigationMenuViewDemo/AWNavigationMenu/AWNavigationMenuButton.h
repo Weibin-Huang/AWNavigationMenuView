@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface AWNavigationMenuButton : UIButton
+
 @property(nonatomic, retain)UIImageView *iconImageView;
 @property(nonatomic, retain)UIImageView *arrowImageView;
 @property(nonatomic, retain)UILabel *buttonTitleLabel;
 @property(nonatomic, assign)BOOL isActive;
+
 @end
