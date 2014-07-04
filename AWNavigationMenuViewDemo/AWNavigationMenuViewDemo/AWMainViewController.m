@@ -10,7 +10,7 @@
 #import "AWNavigationMenu/AWNavigationMenuView.h"
 #import "AWNavigationMenuItem.h"
 @interface AWMainViewController ()<AWNavigationMenuViewDelegate>
-
+@property (nonatomic,retain) UILabel * label;
 @end
 
 @implementation AWMainViewController
@@ -40,6 +40,9 @@
 }
 
 -(void)setupMenuView{
+    NSLog(@"%f %f",self.view.frame.origin.x,self.view.frame.origin.y);
+    
+    NSLog(@"%f %f",self.view.frame.size.width,self.view.frame.size.height);
     if(self.navigationItem) {
         CGRect rect = CGRectMake(0.0f, 0.0f, 200.0f, self.navigationController.navigationBar.bounds.size.height);
         AWNavigationMenuView *menuView = [[AWNavigationMenuView alloc] initWithFrame: rect];
@@ -50,10 +53,10 @@
         //我的关注
         AWNavigationMenuItem *itemFollow = [AWNavigationMenuItem menuItemWithImageName:@"top_toolbar_follow_normal" selectedImageName:@"top_toolbar_follow_selected" title:@"关注" iconImageName:@"title_view_icon_follow" ];
         //热门讨论
-        AWNavigationMenuItem *itemHot = [AWNavigationMenuItem menuItemWithImageName:@"top_toolbar_hot_normal" selectedImageName:@"top_toolbar_hot_selected" title:@"关注" iconImageName:@"title_view_icon_hot" ];
+        AWNavigationMenuItem *itemHot = [AWNavigationMenuItem menuItemWithImageName:@"top_toolbar_hot_normal" selectedImageName:@"top_toolbar_hot_selected" title:@"小心" iconImageName:@"title_view_icon_hot" ];
         //企业公告
         
-        AWNavigationMenuItem *itemBulletin = [AWNavigationMenuItem menuItemWithImageName:@"top_toolbar_bulletin_normal" selectedImageName:@"top_toolbar_bulletin_selected" title:@"关注"iconImageName:@"title_view_icon_bulletin" ];
+        AWNavigationMenuItem *itemBulletin = [AWNavigationMenuItem menuItemWithImageName:@"top_toolbar_bulletin_normal" selectedImageName:@"top_toolbar_bulletin_selected" title:@"欢乐"iconImageName:@"title_view_icon_bulletin" ];
         
         menuView.delegate = self;
         [menuView setItems:@[itemCompany,itemFollow,itemHot,itemBulletin] index:0];

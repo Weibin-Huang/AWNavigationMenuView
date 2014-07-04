@@ -40,6 +40,10 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
+    NSLog(@"%f %f",self.frame.origin.x,self.frame.origin.y);
+
+    NSLog(@"%f %f",self.bounds.size.width,self.bounds.size.height);
+    [self setBackgroundColor:[UIColor greenColor]];
     if (toolbarItems_) {
         NSInteger count = [toolbarItems_ count];
         CGFloat width = CGRectGetWidth(self.bounds) / count;
@@ -49,7 +53,7 @@
         for (NSInteger i = 0 ; i < count; i++) {
             view = toolbarItems_[i];
             offsetX = i * width + width * 0.5;
-            offsetY = CGRectGetWidth(self.bounds) * 0.5;
+            offsetY = CGRectGetHeight(self.bounds) * 0.5;
             view.center = CGPointMake(offsetX, offsetY);
         }
     }

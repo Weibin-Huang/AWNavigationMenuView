@@ -39,6 +39,7 @@
     [super layoutSubviews];
     [iconImageView_ sizeToFit];
     [buttonTitleLabel_ sizeToFit];
+    [self setBackgroundColor:[UIColor redColor]];
     CGPoint center = [[[UIApplication sharedApplication].delegate window] center];
     center = [self convertPoint:center fromView:[[UIApplication sharedApplication].delegate window]];
     center.y = CGRectGetHeight(self.bounds) * 0.5;

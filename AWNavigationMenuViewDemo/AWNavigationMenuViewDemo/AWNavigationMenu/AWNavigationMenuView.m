@@ -24,7 +24,7 @@ alpha:1.0]
 @property(nonatomic, retain) UIView *menuContainer;
 
 @property(nonatomic, retain) NSString *title;
-@property(nonatomic, retain) UIView *maskView;
+@property(nonatomic, retain) UIView * maskView;
 @end
 @implementation AWNavigationMenuView
 @synthesize items = items_;
@@ -82,32 +82,13 @@ alpha:1.0]
     
 }
 
-- (void)setTitle:(NSString *)title
-{
-    if (title_) {
-        title_ = nil;
-    }
-    
-    title_ = title ;
+
+
+- (void)displayMenuInView:(UIView *)view {
+    self.menuContainer = view;
 }
 
-- (void)setItems:(NSArray *)items index:(NSInteger)index
-{
-    if (items_){
-        items = nil;
-    }
-    items_ = items;
-    
-    if (index <0 || index > [items count] - 1) {
-        index = 0;
-    }
-    self.currentIndex = index;
-    
-    //初始化toolbar
-    self.toolbar.dataSource = items;
-    
-    
-}
+
 - (void)onShowToolbar {
     self.toolbar.frame = CGRectMake(0, 0, self.menuContainer.bounds.size.width, 90);
     [self showMaskView];
@@ -117,27 +98,14 @@ alpha:1.0]
     
 }
 
-- (void)displayMenuInView:(UIView *)view {
-    self.menuContainer = view;
-}
+
 - (void)onHideToolbar {
     [self hideMaskView];
     [self.toolbar hide];
     [self rotateArrow:0];
 }
 
-- (void)setCurrentIndex:(NSInteger)currentIndex {
-    if (currentIndex_ != currentIndex) {
-        currentIndex_ = currentIndex;
-        [self updateMenuTitle];
-        
-        self.toolbar.selectedIndex = currentIndex;
-    }
-}
-- (void)setItems:(NSArray *)items {
-    
-    [self setItems:items index:0];
-}
+
 
 
 - (AWTopActionToolbar *) toolbar {
@@ -157,7 +125,7 @@ alpha:1.0]
 - (UIView *)maskView {
     if (!maskView_) {
         maskView_ = [[UIView alloc] initWithFrame:CGRectZero];
-        maskView_.backgroundColor = [UIColor blackColor];
+        maskView_.backgroundColor = [UIColor grayColor];
         UIGestureRecognizer *grzr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(menuBtnTapped:)];
         [maskView_ addGestureRecognizer:grzr];
     }
@@ -199,8 +167,47 @@ alpha:1.0]
     }
 }
 
+#pragma mark -
+#pragma mark Setter Method
+
+- (void)setCurrentIndex:(NSInteger)currentIndex {
+    if (currentIndex_ != currentIndex) {
+        currentIndex_ = currentIndex;
+        [self updateMenuTitle];
+        
+        self.toolbar.selectedIndex = currentIndex;
+    }
+}
+- (void)setItems:(NSArray *)items {
+    
+    [self setItems:items index:0];
+}
 
 
+- (void)setTitle:(NSString *)title
+{
+    if (title_) {
+        title_ = nil;
+    }
+    
+    title_ = title ;
+}
+
+- (void)setItems:(NSArray *)items index:(NSInteger)index
+{
+    if (items_){
+        items = nil;
+    }
+    items_ = items;
+    
+    if (index <0 || index > [items count] - 1) {
+        index = 0;
+    }
+    self.currentIndex = index;
+    
+    //初始化toolbar
+    self.toolbar.dataSource = items;
+}
 #pragma mark - 
 #pragma mark TopActionToolBar Delegate
 
